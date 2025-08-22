@@ -1,0 +1,31 @@
+### Test root endpoint
+GET http://localhost:8080/
+
+### Test login
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+### Test analytics
+POST http://localhost:8080/api/analytics
+Authorization: Bearer test-token
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "id": "1",
+      "sales": [10, 20, 30],
+      "stock_level": [5, 10, 15],
+      "price": 100
+    }
+  ]
+}
+
+### Get user ID
+GET http://localhost:8080/api/userid
+Authorization: Bearer test-token
